@@ -95,6 +95,10 @@ def stats(device):
             draw.text((0, 26), disk_usage('/'), font=font2, fill="white")
             try:
                 draw.text((0, 38), network('wlan0'), font=font2, fill="white")
+                # Display IP address
+                cmd = "hostname -I | cut -d\' \' -f1"
+                IP = subprocess.check_output(cmd, shell = True )
+                draw.text((0, 50), IP, font=font2, fill="white")
             except KeyError:
                 # no wifi enabled/available
                 pass
