@@ -16,6 +16,7 @@ Needs psutil (+ dependencies) installed::
 import os
 import sys
 import time
+import subprocess
 from datetime import datetime
 
 if os.name != 'posix':
